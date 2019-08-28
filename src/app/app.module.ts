@@ -4,18 +4,30 @@ import{FormsModule} from '@angular/forms';   //nammal add cheyyunath
 import { AppComponent } from './app.component';
 import { DetailsComponent } from './details/details.component';
 import { NavComponent } from './nav/nav.component';
-import{HttpClientModule} from '@angular/common/http';  //nammal add cheyyunath
+import{HttpClientModule} from '@angular/common/http';
+import { ViewComponent } from './view/view.component';  //nammal add cheyyunath
+import{ Routes,RouterModule} from '@angular/router';
+import { SearchComponent } from './search/search.component';
+
+
+const appRoutes:Routes=[
+  {path :'',component:DetailsComponent},
+  {path:'view', component:ViewComponent},
+  {path:'search',component:SearchComponent}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     DetailsComponent,
-    NavComponent
+    NavComponent,
+    ViewComponent,
+    SearchComponent
   ],
   imports: [
-    BrowserModule,FormsModule,HttpClientModule    //formsmodule,http nammal add cheyyunath
+    BrowserModule,FormsModule,HttpClientModule,RouterModule.forRoot(appRoutes)   //formsmodule,http nammal add cheyyunath
   ],
   providers: [],
-  bootstrap: [AppComponent,DetailsComponent,NavComponent]
+  bootstrap: [AppComponent,NavComponent]
 })
 export class AppModule { }

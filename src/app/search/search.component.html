@@ -1,0 +1,45 @@
+  <!-- <ng-template #nodata> -->
+    <form (ngSubmit)=onSubmit(f) #f="ngForm">
+      <table class="table">
+        <tr><td>Admission No:</td><td><input type="text" class="form-control" name="adm" id="" ngModel></td></tr>
+        <tr><td></td><td><input type="submit" class="btn btn-primary" value="Search"></td></tr>
+      </table>
+    </form>
+  <!-- </ng-template> -->
+  
+  
+  
+  <!-- <div *ngIf="status else nodata"> -->
+      <table class="table">
+        <div *ngFor="let data of mydata">
+          
+            <tr><td></td></tr>
+            <tr><td><input type="hidden" name="eid" id="" [(ngModel)]="data._id"></td></tr>
+            <tr><td>Name:</td><td><input type="text" class="form-control" name="name" [(ngModel)]='data.name'></td></tr>
+            <tr><td>Roll no:</td><td><input type="text" class="form-control" name="roll"[(ngModel)]='data.roll'></td></tr>
+            <tr><td>Admission no:</td><td><input type="text" class="form-control" name="adm" [(ngModel)]='data.adm'></td></tr>
+            <tr><td>Branch:</td><td><input type="text" class="form-control" name="branch" [(ngModel)]='data.branch'></td></tr>
+            <tr><td>Email:</td><td><input type="text" class="form-control" name="branch" [(ngModel)]='data.email'></td></tr>
+  
+  
+  
+          <!-- <tr>
+            <th>name</th><th>message</th><th>email</th><th>phone no.</th>
+          </tr>
+          <tr *ngFor="let data of mydata">
+              <td>{{data.name}}</td>
+              <td>{{data.email}}</td>
+              <td>{{data.message}}</td>
+              <td>{{data.phone}}</td>
+         -->
+  
+  
+         <tr><td><input type="button" class="btn btn-primary" (click)="deleteuser()" value="delete"></td></tr>
+         <tr><td><input type="button" class="btn btn-success" (click)="updateuser()" value="Update"></td></tr> 
+  
+          
+          </div>
+        </table>
+  <!-- 
+  </div> -->
+  
